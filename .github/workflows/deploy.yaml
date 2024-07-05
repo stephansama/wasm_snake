@@ -22,6 +22,10 @@ jobs:
           toolchain: stable
           target: wasm32-unknown-unknown
           components: rustfmt, clippy
+      - uses: jetli/wasm-bindgen-action@v0.2.0
+        with:
+          # optional version of wasm-bindgen to install(eg. '0.2.83', 'latest')
+          version: 'latest'
       - name: build application
         run: make build
       - name: Setup Pages
